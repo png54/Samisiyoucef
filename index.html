@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Sami SIYOUCEF | Consultant International | Expert TV & Médias</title>
+    
+    <!-- ========== أيقونة الموقع في المتصفح (FAVICON) ========== -->
+    <link rel="icon" type="image/jpeg" href="https://d.top4top.io/p_3813aq2ta1.jpg">
+    <link rel="shortcut icon" href="https://d.top4top.io/p_3813aq2ta1.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://d.top4top.io/p_3813aq2ta1.jpg">
+    
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -37,6 +43,21 @@
             padding: 50px 30px;
             transition: all 0.3s ease;
             overflow-y: auto;
+        }
+
+        /* ترتيب العناصر داخل الشريط الجانبي */
+        .social-links-side {
+            order: 1;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-reference {
+            order: 2;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
         }
 
         .logo-area {
@@ -94,12 +115,6 @@
         }
 
         /* ========== SIDEBAR REFERENCE STYLE ========== */
-        .sidebar-reference {
-            margin-top: 40px;
-            margin-bottom: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
         .sidebar-reference h4 {
             color: #D4AF37;
             font-size: 1rem;
@@ -115,22 +130,29 @@
         .sidebar-ref-item {
             border-radius: 6px;
             overflow: hidden;
+            background-color: #1a1a1a;
         }
         .sidebar-ref-item img {
             width: 100%;
-            height: 80px;
-            object-fit: cover;
+            height: auto;
             display: block;
             transition: transform 0.3s ease;
         }
+        @media (min-width: 993px) {
+            .sidebar-ref-item:not(.wide):not(.super-wide) img {
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+            }
+        }
         .sidebar-ref-item img:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
         .sidebar-ref-item.wide {
             grid-column: span 2;
         }
         .sidebar-ref-item.wide img {
-            height: 100px;
+            height: auto;
+            aspect-ratio: 16 / 9;
             object-fit: cover;
         }
         .sidebar-ref-item.super-wide {
@@ -142,12 +164,13 @@
             background-color: #1a1a1a;
         }
 
-        /* ========== أيقونات التواصل الاجتماعي الفاخرة - اللون الأصفر الذهبي ========== */
+        /* ========== أيقونات التواصل الاجتماعي الفاخرة ========== */
         .social-links-side h4 {
             color: #ffffff80;
             font-size: 0.8rem;
             margin-bottom: 15px;
             letter-spacing: 2px;
+            text-align: center;
         }
 
         .social-icons-side {
@@ -335,7 +358,6 @@
             font-weight: 600;
         }
 
-        /* ========== أيقونات الموبايل بنفس النمط الفاخر ========== */
         .mobile-social-icons {
             display: flex;
             justify-content: center;
@@ -466,7 +488,6 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        /* SERVICES GRID - Desktop: 2 colonnes (2x2), Mobile: 1 colonne */
         .services-grid {
             display: grid;
             gap: 30px;
@@ -558,7 +579,7 @@
             border-radius: 60px;
         }
 
-        /* ========== REFERENCE GALLERY (PAGE PRINCIPALE) ========== */
+        /* ========== REFERENCE GALLERY (PAGE PRINCIPALE) - MODIFICATION ICI ========== */
         .ref-gallery {
             max-width: 1200px;
             margin: 0 auto;
@@ -581,14 +602,29 @@
         }
         .ref-item img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
             display: block;
             transition: transform 0.4s ease;
         }
         .ref-item img:hover {
             transform: scale(1.05);
         }
+        
+        /* Pour Desktop: les 6 premières images deviennent carrées SANS recadrage (contain) */
+        @media (min-width: 993px) {
+            .ref-item:not(.wide):not(.super-wide) {
+                aspect-ratio: 1 / 1;
+                background-color: #f5f5f5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .ref-item:not(.wide):not(.super-wide) img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        
         .ref-item.wide {
             grid-column: span 2;
         }
@@ -604,15 +640,19 @@
             object-fit: contain;
             background-color: #f5f5f5;
         }
-        @media (max-width: 768px) {
-            .ref-item img {
+        
+        /* Mobile: aucun changement, tout reste comme avant */
+        @media (max-width: 992px) {
+            .ref-item:not(.wide):not(.super-wide) {
+                aspect-ratio: unset;
+            }
+            .ref-item:not(.wide):not(.super-wide) img {
                 height: 180px;
+                object-fit: cover;
             }
             .ref-item.wide img {
                 height: 200px;
-            }
-            .ref-item.super-wide img {
-                height: auto;
+                object-fit: cover;
             }
         }
 
@@ -638,6 +678,7 @@
             }
         }
 
+        /* ========== RESPONSIVE: DESIGN MOBILE SANS AUCUN CHANGEMENT ========== */
         @media (max-width: 992px) {
             #header-outer {
                 transform: translateX(-100%);
@@ -646,6 +687,16 @@
             }
             #header-outer.open {
                 transform: translateX(0);
+            }
+            .social-links-side {
+                order: unset;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .sidebar-reference {
+                order: unset;
+                margin-top: 40px;
+                margin-bottom: 40px;
             }
             .mobile-menu-btn {
                 display: flex;
@@ -665,6 +716,11 @@
             }
             .mobile-social-section {
                 display: block;
+            }
+            .sidebar-ref-item:not(.wide):not(.super-wide) img {
+                aspect-ratio: unset;
+                height: 80px;
+                object-fit: cover;
             }
         }
 
@@ -706,28 +762,28 @@
                 <li><a href="#reference">Référence</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="sidebar-reference">
-                <h4>RÉFÉRENCE</h4>
-                <div class="sidebar-ref-grid">
-                    <div class="sidebar-ref-item"><img src="https://b.top4top.io/p_3814b6rcm1.jpg" alt="ref1"></div>
-                    <div class="sidebar-ref-item"><img src="https://c.top4top.io/p_38144se392.jpg" alt="ref2"></div>
-                    <div class="sidebar-ref-item"><img src="https://d.top4top.io/p_3814g6j353.jpg" alt="ref3"></div>
-                    <div class="sidebar-ref-item"><img src="https://e.top4top.io/p_38145if064.jpg" alt="ref4"></div>
-                    <div class="sidebar-ref-item"><img src="https://f.top4top.io/p_3814bsjgd5.jpg" alt="ref5"></div>
-                    <div class="sidebar-ref-item"><img src="https://g.top4top.io/p_38141flok6.jpg" alt="ref6"></div>
-                    <div class="sidebar-ref-item wide"><img src="https://h.top4top.io/p_3814siazc7.jpg" alt="ref7"></div>
-                    <div class="sidebar-ref-item super-wide"><img src="https://e.top4top.io/p_38147jamf1.jpg" alt="ref8 large"></div>
-                </div>
-            </div>
         </div>
         <div class="social-links-side">
             <h4>SUIVEZ-MOI</h4>
             <div class="social-icons-side">
                 <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/siyoucef-sami-702097132/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="sidebar-reference">
+            <h4>RÉFÉRENCE</h4>
+            <div class="sidebar-ref-grid">
+                <div class="sidebar-ref-item"><img src="https://b.top4top.io/p_3814b6rcm1.jpg" alt="ref1"></div>
+                <div class="sidebar-ref-item"><img src="https://c.top4top.io/p_38144se392.jpg" alt="ref2"></div>
+                <div class="sidebar-ref-item"><img src="https://d.top4top.io/p_3814g6j353.jpg" alt="ref3"></div>
+                <div class="sidebar-ref-item"><img src="https://e.top4top.io/p_38145if064.jpg" alt="ref4"></div>
+                <div class="sidebar-ref-item"><img src="https://f.top4top.io/p_3814bsjgd5.jpg" alt="ref5"></div>
+                <div class="sidebar-ref-item"><img src="https://g.top4top.io/p_38141flok6.jpg" alt="ref6"></div>
+                <div class="sidebar-ref-item wide"><img src="https://h.top4top.io/p_3814siazc7.jpg" alt="ref7"></div>
+                <div class="sidebar-ref-item super-wide"><img src="https://e.top4top.io/p_38147jamf1.jpg" alt="ref8 large"></div>
             </div>
         </div>
     </div>
@@ -759,7 +815,7 @@
             <h3>Suivez-moi</h3>
             <div class="mobile-social-icons">
                 <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/siyoucef-sami-702097132/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
