@@ -6,9 +6,9 @@
     <title>Sami SIYOUCEF | Consultant International | Expert TV & Médias</title>
     
     <!-- ========== أيقونة الموقع في المتصفح (FAVICON) ========== -->
-    <link rel="icon" type="image/jpeg" href="https://d.top4top.io/p_3813aq2ta1.jpg">
-    <link rel="shortcut icon" href="https://d.top4top.io/p_3813aq2ta1.jpg" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://d.top4top.io/p_3813aq2ta1.jpg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
     
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -43,21 +43,6 @@
             padding: 50px 30px;
             transition: all 0.3s ease;
             overflow-y: auto;
-        }
-
-        /* ترتيب العناصر داخل الشريط الجانبي */
-        .social-links-side {
-            order: 1;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .sidebar-reference {
-            order: 2;
-            margin-top: 0;
-            margin-bottom: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
         }
 
         .logo-area {
@@ -131,6 +116,7 @@
             border-radius: 6px;
             overflow: hidden;
             background-color: #1a1a1a;
+            position: relative;
         }
         .sidebar-ref-item img {
             width: 100%;
@@ -164,7 +150,7 @@
             background-color: #1a1a1a;
         }
 
-        /* ========== أيقونات التواصل الاجتماعي الفاخرة ========== */
+        /* ========== SOCIAL LINKS ========== */
         .social-links-side h4 {
             color: #ffffff80;
             font-size: 0.8rem;
@@ -579,7 +565,7 @@
             border-radius: 60px;
         }
 
-        /* ========== REFERENCE GALLERY (PAGE PRINCIPALE) - MODIFICATION ICI ========== */
+        /* ========== REFERENCE GALLERY ========== */
         .ref-gallery {
             max-width: 1200px;
             margin: 0 auto;
@@ -596,6 +582,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
             background: #f5f5f5;
+            position: relative;
         }
         .ref-item:hover {
             transform: scale(1.02);
@@ -609,7 +596,6 @@
             transform: scale(1.05);
         }
         
-        /* Pour Desktop: les 6 premières images deviennent carrées SANS recadrage (contain) */
         @media (min-width: 993px) {
             .ref-item:not(.wide):not(.super-wide) {
                 aspect-ratio: 1 / 1;
@@ -621,7 +607,7 @@
             .ref-item:not(.wide):not(.super-wide) img {
                 height: 100%;
                 width: 100%;
-                object-fit: contain;
+                object-fit: cover;
             }
         }
         
@@ -641,7 +627,6 @@
             background-color: #f5f5f5;
         }
         
-        /* Mobile: aucun changement, tout reste comme avant */
         @media (max-width: 992px) {
             .ref-item:not(.wide):not(.super-wide) {
                 aspect-ratio: unset;
@@ -654,6 +639,377 @@
                 height: 200px;
                 object-fit: cover;
             }
+        }
+
+        /* ===== CONTACT SECTION STYLES ===== */
+        .contact-section {
+            background: #0a0a0a;
+            padding: 80px 60px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: #d4af37;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 20px;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .contact-header h2 {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 12px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 35px 30px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:last-of-type {
+            border-bottom: none;
+        }
+
+        .info-card:hover {
+            transform: translateX(5px);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: rgba(212, 175, 55, 0.12);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover .info-icon {
+            background: rgba(212, 175, 55, 0.25);
+            transform: scale(1.05);
+        }
+
+        .info-content h4 {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 3px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .info-content p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .contact-social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-social-link:hover {
+            background: #d4af37;
+            color: #0a0a0a;
+            border-color: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-form-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px 35px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form-wrapper:hover {
+            border-color: rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group label i {
+            color: #d4af37;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.05);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.08);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 12px;
+            margin-top: 6px;
+            display: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 30px;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            border: none;
+            border-radius: 14px;
+            color: #0a0a0a;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.35);
+            background: linear-gradient(135deg, #e0c04a, #c4a02a);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+        }
+
+        .submit-btn .btn-icon {
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover .btn-icon {
+            transform: translateX(5px) rotate(-10deg);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-loader {
+            display: none;
+        }
+
+        .submit-btn.loading .btn-text {
+            display: none;
+        }
+
+        .submit-btn.loading .btn-loader {
+            display: inline-block !important;
+        }
+
+        .submit-btn.loading .btn-icon {
+            display: none;
+        }
+
+        .form-status {
+            margin-top: 18px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            display: none;
+        }
+
+        .form-status.success {
+            display: block;
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #f87171;
         }
 
         .footer {
@@ -678,7 +1034,7 @@
             }
         }
 
-        /* ========== RESPONSIVE: DESIGN MOBILE SANS AUCUN CHANGEMENT ========== */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 992px) {
             #header-outer {
                 transform: translateX(-100%);
@@ -687,16 +1043,6 @@
             }
             #header-outer.open {
                 transform: translateX(0);
-            }
-            .social-links-side {
-                order: unset;
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-            .sidebar-reference {
-                order: unset;
-                margin-top: 40px;
-                margin-bottom: 40px;
             }
             .mobile-menu-btn {
                 display: flex;
@@ -722,6 +1068,37 @@
                 height: 80px;
                 object-fit: cover;
             }
+            .contact-section {
+                padding: 60px 25px 40px;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .contact-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 20px;
+                padding: 25px 20px;
+            }
+            .info-card {
+                padding: 12px 0;
+                border-bottom: none;
+            }
+            .contact-social-links {
+                grid-column: 1 / -1;
+                justify-content: center;
+            }
+            .contact-form-wrapper {
+                padding: 30px 20px;
+            }
+            .contact-form .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .contact-header h2 {
+                font-size: 28px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -741,6 +1118,9 @@
                 padding: 15px;
                 border-radius: 20px;
             }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -752,7 +1132,7 @@
 
     <div id="header-outer">
         <div class="logo-area">
-            <img src="https://d.top4top.io/p_3813aq2ta1.jpg" alt="Sami SIYOUCEF Logo">
+            <img src="logo.png" alt="Sami SIYOUCEF Logo">
         </div>
         <div class="nav-menu">
             <ul>
@@ -776,14 +1156,14 @@
         <div class="sidebar-reference">
             <h4>RÉFÉRENCE</h4>
             <div class="sidebar-ref-grid">
-                <div class="sidebar-ref-item"><img src="https://b.top4top.io/p_3814b6rcm1.jpg" alt="ref1"></div>
-                <div class="sidebar-ref-item"><img src="https://c.top4top.io/p_38144se392.jpg" alt="ref2"></div>
-                <div class="sidebar-ref-item"><img src="https://d.top4top.io/p_3814g6j353.jpg" alt="ref3"></div>
-                <div class="sidebar-ref-item"><img src="https://e.top4top.io/p_38145if064.jpg" alt="ref4"></div>
-                <div class="sidebar-ref-item"><img src="https://f.top4top.io/p_3814bsjgd5.jpg" alt="ref5"></div>
-                <div class="sidebar-ref-item"><img src="https://g.top4top.io/p_38141flok6.jpg" alt="ref6"></div>
-                <div class="sidebar-ref-item wide"><img src="https://h.top4top.io/p_3814siazc7.jpg" alt="ref7"></div>
-                <div class="sidebar-ref-item super-wide"><img src="https://e.top4top.io/p_38147jamf1.jpg" alt="ref8 large"></div>
+                <div class="sidebar-ref-item"><img src="ref-1.jfif" alt="ref1"></div>
+                <div class="sidebar-ref-item"><img src="ref-2.jfif" alt="ref2"></div>
+                <div class="sidebar-ref-item"><img src="ref-3.jfif" alt="ref3"></div>
+                <div class="sidebar-ref-item"><img src="ref-4.jfif" alt="ref4"></div>
+                <div class="sidebar-ref-item"><img src="ref-5.jfif" alt="ref5"></div>
+                <div class="sidebar-ref-item"><img src="ref-6.jfif" alt="ref6"></div>
+                <div class="sidebar-ref-item wide"><img src="ref-7-wide.jfif" alt="ref7"></div>
+                <div class="sidebar-ref-item super-wide"><img src="ref-8-super.jpg" alt="ref8 large"></div>
             </div>
         </div>
     </div>
@@ -791,12 +1171,12 @@
     <div id="main-content">
         <section class="hero-section" id="accueil">
             <div class="slider-bg" id="sliderBg">
-                <div class="slide" style="background-image: url('https://e.top4top.io/p_3814d5ow11.jpg');"></div>
-                <div class="slide" style="background-image: url('https://g.top4top.io/p_3814ov2rn2.jpg');"></div>
-                <div class="slide" style="background-image: url('https://h.top4top.io/p_3814hkmzx3.jpg');"></div>
-                <div class="slide" style="background-image: url('https://i.top4top.io/p_3814h9v0n4.jpg');"></div>
-                <div class="slide" style="background-image: url('https://j.top4top.io/p_38141wwos5.jpg');"></div>
-                <div class="slide" style="background-image: url('https://k.top4top.io/p_3814dzy806.jpg');"></div>
+                <div class="slide" style="background-image: url('slide-1.jpg');"></div>
+                <div class="slide" style="background-image: url('slide-2.JPG');"></div>
+                <div class="slide" style="background-image: url('slide-3.jpg');"></div>
+                <div class="slide" style="background-image: url('slide-4.jpg');"></div>
+                <div class="slide" style="background-image: url('slide-5.JPG');"></div>
+                <div class="slide" style="background-image: url('slide-6.JPG');"></div>
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -826,7 +1206,7 @@
             <div class="container-custom">
                 <div class="about-grid">
                     <div class="about-image">
-                        <img src="https://l.top4top.io/p_381340yho1.jpg" alt="Sami SIYOUCEF">
+                        <img src="profile.jpg" alt="Sami SIYOUCEF">
                     </div>
                     <div class="about-text">
                         <h2 class="section-title">À propos</h2>
@@ -896,20 +1276,120 @@
                 </div>
                 <div class="ref-gallery">
                     <div class="ref-grid">
-                        <div class="ref-item"><img src="https://b.top4top.io/p_3814b6rcm1.jpg" alt="Réf 1"></div>
-                        <div class="ref-item"><img src="https://c.top4top.io/p_38144se392.jpg" alt="Réf 2"></div>
-                        <div class="ref-item"><img src="https://d.top4top.io/p_3814g6j353.jpg" alt="Réf 3"></div>
-                        <div class="ref-item"><img src="https://e.top4top.io/p_38145if064.jpg" alt="Réf 4"></div>
-                        <div class="ref-item"><img src="https://f.top4top.io/p_3814bsjgd5.jpg" alt="Réf 5"></div>
-                        <div class="ref-item"><img src="https://g.top4top.io/p_38141flok6.jpg" alt="Réf 6"></div>
-                        <div class="ref-item wide"><img src="https://h.top4top.io/p_3814siazc7.jpg" alt="Réf 7 - Large"></div>
-                        <div class="ref-item super-wide"><img src="https://e.top4top.io/p_38147jamf1.jpg" alt="Réf 8 - Super Large"></div>
+                        <div class="ref-item"><img src="ref-1.jfif" alt="Réf 1"></div>
+                        <div class="ref-item"><img src="ref-2.jfif" alt="Réf 2"></div>
+                        <div class="ref-item"><img src="ref-3.jfif" alt="Réf 3"></div>
+                        <div class="ref-item"><img src="ref-4.jfif" alt="Réf 4"></div>
+                        <div class="ref-item"><img src="ref-5.jfif" alt="Réf 5"></div>
+                        <div class="ref-item"><img src="ref-6.jfif" alt="Réf 6"></div>
+                        <div class="ref-item wide"><img src="ref-7-wide.jfif" alt="Réf 7 - Large"></div>
+                        <div class="ref-item super-wide"><img src="ref-8-super.jpg" alt="Réf 8 - Super Large"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer class="footer" id="contact">
+        <!-- ===== CONTACT US SECTION ===== -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <span class="contact-badge"><i class="fas fa-comment-dots"></i> Contactez-moi</span>
+                    <h2>Parlons de votre projet</h2>
+                    <p>Que vous ayez un projet de chaîne TV, une stratégie médiatique ou un besoin en conseil en investissement, je suis à votre écoute.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Localisation</h4>
+                                <p>Algérie - Méditerranée</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Téléphone</h4>
+                                <p>+216 93 748 457</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>sami@samisiyoucef.com</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Disponibilité</h4>
+                                <p>Lun - Ven: 9h - 18h</p>
+                            </div>
+                        </div>
+                        <div class="contact-social-links">
+                            <a href="#" class="contact-social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/siyoucef-sami-702097132/" target="_blank" class="contact-social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="contact-social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="contact-social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="contact-social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="contact-form" action="https://formsubmit.co/sami@samisiyoucef.com" method="POST">
+                            <!-- FormSubmit configuration -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_subject" value="📩 Nouveau message depuis le site Sami SIYOUCEF">
+                            <input type="hidden" name="_autoresponse" value="Bonjour,&#10;&#10;Merci pour votre message. Je vous répondrai dans les plus brefs délais.&#10;&#10;Cordialement,&#10;Sami SIYOUCEF">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName"><i class="fas fa-user"></i> Nom complet</label>
+                                    <input type="text" id="fullName" name="name" placeholder="Votre nom complet" required>
+                                    <div class="error-message" id="nameError">Veuillez entrer votre nom complet</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                                    <div class="error-message" id="emailError">Veuillez entrer un email valide</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject"><i class="fas fa-tag"></i> Sujet</label>
+                                <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+                                <div class="error-message" id="subjectError">Veuillez indiquer le sujet</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message"><i class="fas fa-pencil-alt"></i> Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                                <div class="error-message" id="messageError">Veuillez écrire votre message</div>
+                            </div>
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span class="btn-text">Envoyer le message</span>
+                                <span class="btn-loader"><i class="fas fa-spinner fa-spin"></i></span>
+                                <i class="fas fa-paper-plane btn-icon"></i>
+                            </button>
+                            <div id="formStatus" class="form-status" style="display:none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
             <p>Sami SIYOUCEF</p>
             <p>Consultant international en investissement</p>
             <p>Expert en communication et management des médias</p>
@@ -972,6 +1452,117 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
+            });
+        });
+
+        // ===== CONTACT FORM VALIDATION & SUBMISSION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const statusDiv = document.getElementById('formStatus');
+
+            // Validation des champs
+            function validateField(input, errorId) {
+                const error = document.getElementById(errorId);
+                if (input.type === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value.trim())) {
+                        input.classList.add('error');
+                        error.classList.add('show');
+                        return false;
+                    }
+                } else if (input.value.trim() === '') {
+                    input.classList.add('error');
+                    error.classList.add('show');
+                    return false;
+                }
+                input.classList.remove('error');
+                error.classList.remove('show');
+                return true;
+            }
+
+            // Validation en temps réel
+            document.querySelectorAll('.form-group input, .form-group textarea').forEach(field => {
+                field.addEventListener('blur', function() {
+                    const errorId = this.id + 'Error';
+                    validateField(this, errorId);
+                });
+                field.addEventListener('input', function() {
+                    const errorId = this.id + 'Error';
+                    if (this.classList.contains('error')) {
+                        if (this.type === 'email') {
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (emailRegex.test(this.value.trim())) {
+                                this.classList.remove('error');
+                                document.getElementById(errorId).classList.remove('show');
+                            }
+                        } else if (this.value.trim() !== '') {
+                            this.classList.remove('error');
+                            document.getElementById(errorId).classList.remove('show');
+                        }
+                    }
+                });
+            });
+
+            // Soumission du formulaire
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Validation de tous les champs
+                let isValid = true;
+                const fields = [
+                    { id: 'fullName', errorId: 'nameError' },
+                    { id: 'email', errorId: 'emailError' },
+                    { id: 'subject', errorId: 'subjectError' },
+                    { id: 'message', errorId: 'messageError' }
+                ];
+
+                fields.forEach(({ id, errorId }) => {
+                    const field = document.getElementById(id);
+                    const error = document.getElementById(errorId);
+                    if (!validateField(field, errorId)) {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    statusDiv.className = 'form-status error';
+                    statusDiv.textContent = 'Veuillez corriger les champs en rouge.';
+                    statusDiv.style.display = 'block';
+                    return;
+                }
+
+                // Envoi du formulaire
+                submitBtn.disabled = true;
+                submitBtn.classList.add('loading');
+                statusDiv.style.display = 'none';
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        statusDiv.className = 'form-status success';
+                        statusDiv.textContent = '✅ Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.';
+                        statusDiv.style.display = 'block';
+                        form.reset();
+                    } else {
+                        throw new Error('Erreur réseau');
+                    }
+                })
+                .catch(error => {
+                    statusDiv.className = 'form-status error';
+                    statusDiv.textContent = '❌ Une erreur s\'est produite. Veuillez réessayer ou m\'envoyer un email directement.';
+                    statusDiv.style.display = 'block';
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('loading');
+                });
             });
         });
     </script>
