@@ -716,6 +716,36 @@
             font-family: 'Inter', sans-serif;
         }
 
+        /* ===== TITRE BARRE AVEC FOND JAUNE ===== */
+        .contact-form-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-form-title .form-title-badge {
+            display: inline-block;
+            background: #D4AF37;
+            color: #0a0a0a;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 12px 35px;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form-title .form-title-badge i {
+            margin-right: 10px;
+        }
+
+        .contact-form-title .form-title-badge:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+        }
+
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1.8fr;
@@ -1099,19 +1129,29 @@
             .contact-header h2 {
                 font-size: 28px;
             }
+            .contact-form-title .form-title-badge {
+                font-size: 15px;
+                padding: 10px 25px;
+            }
         }
 
         @media (max-width: 768px) {
             .about-grid {
                 flex-direction: column;
-                text-align: center;
+            }
+            /* ===== IMPORTANT: Modification du texte "À propos" en mobile ===== */
+            .about-text {
+                text-align: left !important;
+            }
+            .about-text p {
+                text-align: left !important;
             }
             .section-title::after {
-                left: 50%;
-                transform: translateX(-50%);
+                left: 0;
+                transform: none;
             }
             .expertise-tags {
-                justify-content: center;
+                justify-content: flex-start;
             }
             .service-description {
                 font-size: 1rem;
@@ -1120,6 +1160,10 @@
             }
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+            .contact-form-title .form-title-badge {
+                font-size: 14px;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -1339,6 +1383,13 @@
 
                     <!-- Contact Form -->
                     <div class="contact-form-wrapper">
+                        <!-- ===== TITRE BARRE AVEC FOND JAUNE ===== -->
+                        <div class="contact-form-title">
+                            <span class="form-title-badge">
+                                <i class="fas fa-paper-plane"></i> Demande de Consultation
+                            </span>
+                        </div>
+
                         <form id="contactForm" class="contact-form" action="https://formsubmit.co/sami@samisiyoucef.com" method="POST">
                             <!-- FormSubmit configuration -->
                             <input type="hidden" name="_captcha" value="false">
