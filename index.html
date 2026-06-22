@@ -716,7 +716,7 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* ===== TITRE BARRE AVEC FOND JAUNE ===== */
+        /* ===== TITRE BARRE AVEC FOND JAUNE (style identique au bouton Envoyer) ===== */
         .contact-form-title {
             text-align: center;
             margin-bottom: 30px;
@@ -724,26 +724,42 @@
 
         .contact-form-title .form-title-badge {
             display: inline-block;
-            background: #D4AF37;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
             color: #0a0a0a;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            padding: 12px 35px;
-            border-radius: 50px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
-            border: 2px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            padding: 14px 35px;
+            border-radius: 14px;
+            letter-spacing: 0.5px;
+            text-transform: none;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+            border: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
         }
 
-        .contact-form-title .form-title-badge i {
-            margin-right: 10px;
+        .contact-form-title .form-title-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .contact-form-title .form-title-badge:hover::before {
+            left: 100%;
         }
 
         .contact-form-title .form-title-badge:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #e0c04a, #c4a02a);
         }
 
         .contact-wrapper {
@@ -1131,7 +1147,8 @@
             }
             .contact-form-title .form-title-badge {
                 font-size: 15px;
-                padding: 10px 25px;
+                padding: 12px 28px;
+                border-radius: 12px;
             }
         }
 
@@ -1163,7 +1180,8 @@
             }
             .contact-form-title .form-title-badge {
                 font-size: 14px;
-                padding: 10px 20px;
+                padding: 12px 24px;
+                border-radius: 12px;
             }
         }
     </style>
@@ -1383,10 +1401,10 @@
 
                     <!-- Contact Form -->
                     <div class="contact-form-wrapper">
-                        <!-- ===== TITRE BARRE AVEC FOND JAUNE ===== -->
+                        <!-- ===== TITRE BARRE AVEC FOND JAUNE (style identique au bouton Envoyer) ===== -->
                         <div class="contact-form-title">
                             <span class="form-title-badge">
-                                <i class="fas fa-paper-plane"></i> Demande de Consultation
+                                Demande de Consultation
                             </span>
                         </div>
 
