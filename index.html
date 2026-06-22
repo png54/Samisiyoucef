@@ -452,9 +452,12 @@
 
         .about-text p {
             font-size: 1rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #4a4a4a;
             margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
         }
 
         .expertise-tags {
@@ -641,6 +644,172 @@
             }
         }
 
+        /* ===== TARIF SECTION STYLES ===== */
+        .tarif-section {
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .tarif-section .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .tarif-section .section-title {
+            display: block;
+            text-align: center;
+        }
+
+        .tarif-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .tarif-btn-wrapper {
+            margin-top: 30px;
+        }
+
+        .tarif-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: #0a0a0a;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            padding: 16px 50px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .tarif-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .tarif-btn:hover::before {
+            left: 100%;
+        }
+
+        .tarif-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 35px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #e0c04a, #c4a02a);
+        }
+
+        .tarif-btn i {
+            margin-right: 12px;
+        }
+
+        /* ===== TARIF MODAL ===== */
+        .tarif-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tarif-modal.active {
+            display: flex;
+        }
+
+        .tarif-modal-content {
+            background: #ffffff;
+            border-radius: 24px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+        }
+
+        .tarif-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.05);
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #1a1a1a;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: #f5f5f5;
+        }
+
+        .tarif-modal-close:hover {
+            background: #d4af37;
+            color: #0a0a0a;
+            transform: rotate(90deg);
+        }
+
+        .tarif-modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .tarif-modal-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tarif-modal-title span {
+            color: #d4af37;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         /* ===== CONTACT SECTION STYLES ===== */
         .contact-section {
             background: #0a0a0a;
@@ -716,7 +885,7 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* ===== TITRE BARRE AVEC FOND JAUNE (style identique au bouton Envoyer) ===== */
+        /* ===== TITRE BARRE AVEC FOND JAUNE (identique au bouton Envoyer) ===== */
         .contact-form-title {
             text-align: center;
             margin-bottom: 30px;
@@ -726,10 +895,10 @@
             display: inline-block;
             background: linear-gradient(135deg, #d4af37, #b8941f);
             color: #0a0a0a;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             font-family: 'Inter', sans-serif;
-            padding: 14px 35px;
+            padding: 16px 35px;
             border-radius: 14px;
             letter-spacing: 0.5px;
             text-transform: none;
@@ -962,7 +1131,7 @@
             border: none;
             border-radius: 14px;
             color: #0a0a0a;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             font-family: 'Inter', sans-serif;
             cursor: pointer;
@@ -1114,6 +1283,9 @@
                 height: 80px;
                 object-fit: cover;
             }
+            .tarif-section {
+                padding: 50px 25px;
+            }
             .contact-section {
                 padding: 60px 25px 40px;
             }
@@ -1145,10 +1317,12 @@
             .contact-header h2 {
                 font-size: 28px;
             }
-            .contact-form-title .form-title-badge {
-                font-size: 15px;
-                padding: 12px 28px;
-                border-radius: 12px;
+            .tarif-modal-content {
+                padding: 20px;
+                margin: 10px;
+            }
+            .tarif-modal-title {
+                font-size: 22px;
             }
         }
 
@@ -1156,12 +1330,12 @@
             .about-grid {
                 flex-direction: column;
             }
-            /* ===== IMPORTANT: Modification du texte "À propos" en mobile ===== */
             .about-text {
                 text-align: left !important;
             }
             .about-text p {
-                text-align: left !important;
+                text-align: justify !important;
+                text-justify: inter-word !important;
             }
             .section-title::after {
                 left: 0;
@@ -1179,9 +1353,30 @@
                 grid-template-columns: 1fr;
             }
             .contact-form-title .form-title-badge {
-                font-size: 14px;
-                padding: 12px 24px;
+                font-size: 16px;
+                padding: 14px 24px;
                 border-radius: 12px;
+            }
+            .submit-btn {
+                font-size: 16px;
+                padding: 14px 20px;
+            }
+            .tarif-btn {
+                font-size: 16px;
+                padding: 14px 30px;
+            }
+            .tarif-modal-content {
+                padding: 15px;
+            }
+            .tarif-modal-title {
+                font-size: 18px;
+            }
+            .tarif-modal-close {
+                top: 10px;
+                right: 12px;
+                width: 36px;
+                height: 36px;
+                font-size: 22px;
             }
         }
     </style>
@@ -1201,6 +1396,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#a-propos">À propos</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#tarif">Tarif</a></li>
                 <li><a href="#reference">Référence</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1276,7 +1472,7 @@
                         <p>Il est membre du Conseil d'administration de la CGEA (Confédération Générale des Entreprises Algériennes), où il contribue à la réflexion stratégique sur le développement économique et l'investissement.</p>
                         <p>Titulaire d'un MBA en investissement, il possède également une solide formation académique en communication et médias : Master II en communication et médias modernes, Master en gestion des grands médias, Licence en sciences de l'information et de la communication.</p>
                         <p>Au cours de sa carrière, Sami SIYOUCEF a piloté et accompagné le lancement de <strong>sept projets de chaînes de télévision</strong> en Algérie et dans l'espace méditerranéen, mettant son expertise au service du développement des médias, de la stratégie de contenu, de la gouvernance et de l'innovation.</p>
-                        <p>Son parcours unique, à la croisée de l'investissement, de la communication et du management des médias, fait de lui un interlocuteur privilégié pour les entreprises, les investisseurs and les organisations souhaitant développer des projets à fort impact dans la région méditerranéenne.</p>
+                        <p>Son parcours unique, à la croisée de l'investissement, de la communication et du management des médias, fait de lui un interlocuteur privilégié pour les entreprises, les investisseurs et les organisations souhaitant développer des projets à fort impact dans la région méditerranéenne.</p>
                         <div class="expertise-tags">
                             <span>Investissement international</span>
                             <span>Communication & médias</span>
@@ -1330,6 +1526,34 @@
                 </div>
             </div>
         </section>
+
+        <!-- ===== TARIF SECTION ===== -->
+        <section class="tarif-section" id="tarif">
+            <div class="tarif-container">
+                <h2 class="section-title">📊 Tarifs & Prestations</h2>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.1rem; color: #4a4a4a; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                    Découvrez nos offres et forfaits adaptés à vos besoins en conseil, stratégie médias et développement de projets.
+                </p>
+                <div class="tarif-btn-wrapper">
+                    <button class="tarif-btn" id="tarifBtn">
+                        <i class="fas fa-file-invoice"></i> Voir les tarifs
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TARIF MODAL ===== -->
+        <div class="tarif-modal" id="tarifModal">
+            <div class="tarif-modal-content">
+                <button class="tarif-modal-close" id="tarifModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="tarif-modal-title">
+                    📋 <span>Tarifs</span> & Prestations
+                </div>
+                <img src="tarif.png" alt="Tarifs et prestations">
+            </div>
+        </div>
 
         <section class="section section-white" id="reference">
             <div class="container-custom">
@@ -1401,7 +1625,7 @@
 
                     <!-- Contact Form -->
                     <div class="contact-form-wrapper">
-                        <!-- ===== TITRE BARRE AVEC FOND JAUNE (style identique au bouton Envoyer) ===== -->
+                        <!-- ===== TITRE BARRE AVEC FOND JAUNE (identique au bouton Envoyer) ===== -->
                         <div class="contact-form-title">
                             <span class="form-title-badge">
                                 Demande de Consultation
@@ -1513,6 +1737,35 @@
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+        });
+
+        // ===== TARIF MODAL =====
+        const tarifBtn = document.getElementById('tarifBtn');
+        const tarifModal = document.getElementById('tarifModal');
+        const tarifModalClose = document.getElementById('tarifModalClose');
+
+        tarifBtn.addEventListener('click', () => {
+            tarifModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        tarifModalClose.addEventListener('click', () => {
+            tarifModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        tarifModal.addEventListener('click', (e) => {
+            if (e.target === tarifModal) {
+                tarifModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && tarifModal.classList.contains('active')) {
+                tarifModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         });
 
         // ===== CONTACT FORM VALIDATION & SUBMISSION =====
