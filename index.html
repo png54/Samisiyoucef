@@ -457,7 +457,9 @@
             margin-bottom: 15px;
             text-align: justify;
             text-justify: inter-word;
-            hyphens: auto;
+            /* hyphens: auto; تم إزالتها لمنع تقسيم الكلمات */
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .expertise-tags {
@@ -646,23 +648,31 @@
 
         /* ===== TARIF SECTION STYLES ===== */
         .tarif-section {
-            padding: 80px 60px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 60px 60px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             position: relative;
-        }
-
-        .tarif-section .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
+            border-top: 3px solid #D4AF37;
+            border-bottom: 3px solid #D4AF37;
         }
 
         .tarif-section .section-title {
             display: block;
             text-align: center;
+            color: #ffffff;
+        }
+
+        .tarif-section .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+            background: #D4AF37;
+        }
+
+        .tarif-section p {
+            color: rgba(255, 255, 255, 0.7) !important;
         }
 
         .tarif-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
@@ -739,7 +749,7 @@
         .tarif-modal-content {
             background: #ffffff;
             border-radius: 24px;
-            max-width: 900px;
+            max-width: 800px;
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
@@ -783,7 +793,7 @@
 
         .tarif-modal-title {
             text-align: center;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             color: #1a1a1a;
             margin-bottom: 20px;
@@ -1336,6 +1346,7 @@
             .about-text p {
                 text-align: justify !important;
                 text-justify: inter-word !important;
+                hyphens: none !important;
             }
             .section-title::after {
                 left: 0;
@@ -1377,6 +1388,21 @@
                 width: 36px;
                 height: 36px;
                 font-size: 22px;
+            }
+            /* ===== تصحيح خلفية قسم Tarif في الهاتف ===== */
+            .tarif-section {
+                padding: 40px 20px;
+                background: #0a0a0a;
+                border-top: 3px solid #D4AF37;
+                border-bottom: 3px solid #D4AF37;
+            }
+            .tarif-section .section-title {
+                font-size: 1.8rem;
+                color: #ffffff;
+            }
+            .tarif-section p {
+                color: rgba(255, 255, 255, 0.7) !important;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -1530,8 +1556,8 @@
         <!-- ===== TARIF SECTION ===== -->
         <section class="tarif-section" id="tarif">
             <div class="tarif-container">
-                <h2 class="section-title">📊 Tarifs & Prestations</h2>
-                <p style="text-align: center; margin-top: 20px; font-size: 1.1rem; color: #4a4a4a; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                <h2 class="section-title">Tarifs & Prestations</h2>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
                     Découvrez nos offres et forfaits adaptés à vos besoins en conseil, stratégie médias et développement de projets.
                 </p>
                 <div class="tarif-btn-wrapper">
